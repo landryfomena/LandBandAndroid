@@ -5,18 +5,145 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
-
-    <TextView
-        android:id="@+id/text_home"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textSize="20sp"
-        android:text="this is the home fragment "
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:id="@+id/top_header"
+    app:layout_constraintTop_toTopOf="parent"
+    android:background="@color/home_headear_background_color"
+    app:layout_constraintHeight_default="percent"
+    app:layout_constraintHeight_percent="0.5">
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/dimen_0dp"
+        android:layout_height="@dimen/dimen_0dp"
+        android:id="@+id/profile_card"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent="0.45"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintHeight_percent="0.6"
+        app:cardCornerRadius="17dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:background="#A5ACE2"
+            android:layout_height="match_parent">
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginVertical="8dp"
+                app:layout_constraintHeight_default="percent"
+                android:layout_height="0dp"
+                android:id="@+id/profile_image"
+                app:cardCornerRadius="@dimen/dimen_10dp"
+               app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintHeight_percent="0.5"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/user_name"
+                android:layout_marginHorizontal="8dp"
+                android:textSize="@dimen/dimen_22sp"
+                app:layout_constraintTop_toBottomOf="@+id/profile_image"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:text="Landry Fomena"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/account_title"
+                android:layout_marginVertical="8dp"
+                android:textSize="@dimen/dimen_15sp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/user_name"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@android:color/white"
+                android:text="@string/account_title"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/account_value"
+                android:layout_marginVertical="8dp"
+                android:layout_marginHorizontal="4dp"
+                android:textSize="@dimen/dimen_13sp"
+               app:layout_constraintTop_toTopOf="@+id/account_title"
+                app:layout_constraintBottom_toBottomOf="@id/account_title"
+                app:layout_constraintStart_toEndOf="@+id/account_title"
+                android:textColor="@android:color/white"
+                android:text="+237698481557"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/dimen_0dp"
+        android:layout_height="@dimen/dimen_0dp"
+        app:layout_constraintHeight_percent="0.55"
+        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/profile_card"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintVertical_bias="0.7"
+        android:background="@drawable/circular_shap"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/noun_bank_"
+            app:layout_constraintBottom_toTopOf="@+id/balance"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="150 000 000 0"
+            android:id="@+id/balance"
+            android:textSize="25sp"
+            android:textColor="@android:color/white"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/balance"
+            android:text="XAF"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"
+            android:textColor="@android:color/white"
+
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/top_header"
+        android:background="@color/home_footer_background"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent="0.5">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
